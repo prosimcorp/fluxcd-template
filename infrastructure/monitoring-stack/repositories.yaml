@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: monitoring-stack
+  namespace: flux-system
+spec:
+  interval: 20s
+  url: https://github.com/prosimcorp/monitoring-stack.git
+  ref:
+    branch: master
+  secretRef:
+    name: flux-system
