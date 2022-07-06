@@ -3,6 +3,7 @@
 ## Important
 
 > **ATTENTION**
+>
 > Before diving deeper in the specific documentation of this repository, you must know that is part of an entire flow
 > composed by several repositories. In the following diagram you will have a better insight.
 
@@ -12,7 +13,7 @@
                                                          |      +----------------------+
                                                          |
 +-----------------------+       +--------------------+   |      +----------------------+
-| 1. Automated EKS      +------>| 2. FluxCD Template +---+----->|  4. Monitoring Stack |
+| 1. Automated EKS/GKE  +------>| 2. FluxCD Template +---+----->|  4. Monitoring Stack |
 +-----------------------+       +--------------------+   |      +----------------------+
                                                          |
                                                          |      +----------------------+
@@ -22,15 +23,25 @@
 
 ## Description
 
-This is an example repository to be deployable on any cloud provider's Kubernetes distribution, such as EKS or GKE,
-and show how to organize files and directories inside for Flux.
+This is an template repository to be deployable on any cloud provider's Kubernetes distribution, such as EKS or GKE,
+and it shows how to organize files and directories inside for FluxCD to operate a whole cluster using GitOps approach.
+
+## Constraints
 
 The goal of this repository is achieved **following the following constraints**:
 
-- One repository per cluster
+- One repository per Kubernetes cluster
 - All possible overlays must be allocated in one place
-- Flux, Infrastructure and applications' deployments must be separated to operate faster
+- Flux, Infrastructure and applications' deployments must be separated to allow teams operate faster
 - All the overlays must be applied by using Kustomization patches in separated files
+
+   > **ATTENTION**
+   >
+   > Most tools are previously polished by vendors to be production ready. Because of that, the best practise is to deploy
+   > them with the configuration as default as possible. Don't try to reinvent the wheel that huge companies already invented.
+   >
+   > Your mission with the patches is to make it automated and reliable. If some bug appears, go to the vendor's repository
+   > and collaborate there to solve the root cause there for everyone, not here.
 
 ## Organization
 
@@ -70,14 +81,6 @@ logs, metrics, show them using dashboards or emit alerts to Slack. One more time
 
 This package is called **Monitoring Stack** better documented inside
 [its original repository](https://github.com/prosimcorp/monitoring-stack)
-
-### As default as possible
-
-Most tools are previously polished by vendors to be production ready. Because of that, the best practise is to deploy
-them with the configuration as default as possible. Don't try to reinvent the wheel that huge companies already invented.
-
-Your mission with the patches is to make it automated and reliable. If some bug appears, go to the vendor's repository
-and collaborate there to solve the root cause there for everyone, not here.
 
 ## How to operate
 

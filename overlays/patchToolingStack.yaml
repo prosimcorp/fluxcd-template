@@ -10,7 +10,7 @@ metadata:
 spec:
   # As a default deployment environment, SRE members set 'develop',
   # but 'production' is more desirable for reliability purposes.
-  path: ./flux/production
+  path: ./fluxcd/production
 
 ---
 # Patch the git repository reference to fix the tag
