@@ -8,5 +8,3 @@ spec:
   url: https://github.com/prosimcorp/monitoring-stack.git
   ref:
     branch: master
-  secretRef:
-    name: flux-system
