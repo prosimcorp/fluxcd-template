@@ -21,4 +21,5 @@ metadata:
   namespace: flux-system
 spec:
   ref:
-    tag: v0.1.0
+    branch: master
+    #tag: v0.1.0
